@@ -2,7 +2,7 @@ public with sharing class MetadataTriggerManager {
     
     private final String TRIGGER_OBJECT_REQUIRED = 'Must set trigger sobject';
     private final String SOMETHING_WENT_WRONG = 'Something went wrong. Please contact administrator.';
-    private Boolean isTriggerEnabled = true;
+    private Boolean isTriggerEnabled = false;
     private String sObjectType;
 
     // Run trigger handlers. Example: new MetadataTriggerManager().enableTrigger(true).setSObjectType('ObjectXXX').run();
