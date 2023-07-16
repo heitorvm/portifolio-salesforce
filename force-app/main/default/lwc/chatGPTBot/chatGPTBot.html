@@ -10,7 +10,7 @@
                                     <span class={message.textClass}>GPT : {message.text}</span>
                                 </template>
                                 <template lwc:else>
-                                    <span class={message.textClass}>User : {message.text}</span>
+                                    <span class={message.textClass}>{currentUserName} : {message.text}</span>
                                 </template> 
                             </div>
                         </div>
@@ -18,6 +18,11 @@
                 </template>
             </ul>
         </div>
+        <template if:true={waitingChatGPT}>
+            <div class="typing-new-text">
+                <div class="typing-output"></div>
+            </div>
+        </template>
         <div class="slds-grid slds-grid_align-spread slds-p-top_medium">
             <div class="slds-col slds-size_10-of-12">
                 <lightning-input type="text" label="Type your message" value={messageInput} onchange={handleChange}></lightning-input>
